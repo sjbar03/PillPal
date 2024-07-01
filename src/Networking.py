@@ -6,27 +6,18 @@ class Networking():
     NIH = "https://rxnav.nlm.nih.gov"
     ALL_EXT = "/REST/RxTerms/allconcepts.json"
 
+    OPEN_FDA = 'https://api.fda.gov/drug/ndc.json?/search=brand_name:'
+
     def term_info(self, rxcui):
         return "/REST/RxTerms/rxcui/" + rxcui + "/allinfo.json"
 
-    def update_meds(self):
+    def get_drug_info(self, brand):
 
-        resp = requests.get(Networking.NIH + Networking.ALL_EXT)
-
-        if resp.ok:
-            return json.loads(resp.content)['minConceptGroup']['minConcept']
-        else:
-            print(resp.raise_for_status())
-
-    def get_term_info(self, rxcui):
-
-        resp = requests.get(Networking.NIH + self.term_info(rxcui))
+        resp = requests.get(Networking.OPEN_FDA + brand)
 
         if resp.ok:
-
-            return json.loads(resp.content)['rxtermsProperties']
-
+            return resp.content
         else:
-            print(resp.raise_for_status())
-
+            resp.raise_for_status()
+        
 network = Networking()

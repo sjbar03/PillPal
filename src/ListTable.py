@@ -29,6 +29,7 @@ class ListTable(ttk.Frame):
 
         self.selected_row = 0
         self.create_y_scroll()
+        self.add_headers(col_names)
 
     def add_col(self, col_name, body, index):
         
@@ -37,12 +38,21 @@ class ListTable(ttk.Frame):
                              bg="white", fg="black", exportselection=False, selectmode="single",
                              width= int(self.col_ratio[index] / 100 * self.box_width), font= ('Times', 14))
 
-        new_col.grid(row=0, column=len(self.columns))
+        new_col.grid(row=1, column=len(self.columns))
         new_col.bind("<<ListboxSelect>>", self.select_row)
         new_col.bind("<MouseWheel>", self.on_mouse_wheel)
         new_col.bind("<Button-4>", self.on_mouse_wheel)
         new_col.bind("<Button-5>", self.on_mouse_wheel)
         self.columns.append(new_col)
+
+    def add_headers(self, col_names): 
+
+        col = 0
+        for name in col_names:
+
+            head = ttk.Label(self, text=name, justify='center', width=self.col_ratio[col] / 100 * self.box_width)
+            head.grid(row=0,column=col)
+            col += 1
 
     def select_row(self, evt):
         selection = evt.widget.curselection()

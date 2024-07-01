@@ -1,5 +1,5 @@
 import Medication
-import Networking
+import MedBase
 import random
 
 class Patient():
@@ -11,13 +11,13 @@ class Patient():
         self.ins = ins
         self.meds = []
 
-    def generate_meds(self, med_base):
+    def generate_meds(self):
 
-        quantity = random.randint(1,15)
+        quantity = random.randint(1,7)
 
         for i in range(quantity):
 
-            term_info = Networking.network.get_term_info(random.choice(med_base)['rxcui']) 
+            term_info = random.choice(MedBase.med_base) 
             m = Medication.Medication(term_info)
             self.meds.append(m)
 
