@@ -1,5 +1,9 @@
 from Patient import *
+from Medication import *
+import requests
 import random
+import json
+
 
 def wnl(string: str):
     loc = string.find('\n')
@@ -8,11 +12,17 @@ def wnl(string: str):
     else:
         return string.strip()
 
+def openfda_url(condition):
+    return 'https://api.fda.gov/drug/label.json?api_key=VHCbYgFQH0qtUIAeXvkSyRYdZIg3T6G7QkrxEX1w&search=indications_and_usage:"' + condition + '"+AND+_exists_:"openfda"&limit=10'
+
 class PatientPool():
-
+    
     def __init__(self):
+        
+        self.total_removed = 0 # Counter for thinning script
 
-        self.patients = []
+        self.curr_patient = None
+        self.next_patient = None
         self.populate_disease_base('data/conditions.txt')
         self.populate_fname_bases('data/male_names.txt','data/female_names.txt')
         self.populate_lname_base('data/last_names.txt')
@@ -91,10 +101,58 @@ class PatientPool():
             
             kwargs['diseases'] = list(set(diseases)) # remove potential duplicates
 
-            self.patients.append(Patient(kwargs))
+            self.next_patient = Patient(kwargs)
 
-pool = PatientPool()
+    def generate_meds(self, patient: Patient):
 
-pool.generate_patient()
+        patient.meds = []
 
-print(str(pool.patients[0]))
+        for cond in patient.diseases:
+
+            resp = requests.get(openfda_url(cond))
+
+            if resp.ok:
+
+                decoded = json.loads(resp.content)
+                
+                med = random.choice(decoded['results'])
+
+                patient.add_med((Medication(med), cond))
+
+            else:
+                
+                self.disease_base.remove(cond)
+                file = open('data/conditions.txt', 'w')
+                file.writelines(list(map((lambda x: x + '\n'), self.disease_base)))
+                file.close()
+                self.total_removed += 1
+
+    def clear_patients(self):
+        self.curr_patient = None
+        self.next_patient = None
+
+if __name__ == '__main__':
+
+   # Thinning script
+
+    pool = PatientPool()
+    result = []
+    total_removed = 0
+
+    for i in range(len(pool.disease_base)):
+
+        resp = requests.get(openfda_url(pool.disease_base[i]))
+
+        if resp.ok:
+            print(str(i) + " is good.")
+            result.append(pool.disease_base[i] + '\n')
+        else:
+            print(str(i) + " is bad.")
+            total_removed += 1
+
+        print("Progress: " + str(i) + " / " + str(len(pool.disease_base)) + ". Total Removed: " + str(total_removed) + ".")
+
+    file = open('data/conditions.txt', 'w')
+    file.writelines(result)
+    file.close()
+
