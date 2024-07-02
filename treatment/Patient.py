@@ -11,6 +11,10 @@ class Patient():
         self.diseases = kwargs['diseases']
         self.meds: list[tuple[Medication, str]] = []
 
+    @classmethod
+    def placeholder(self):
+        return Patient({'fname':'', 'lname':'', 'age':0, 'gender':0, 'diseases':[]})
+
     def __str__(self):
 
         builder = ""
@@ -26,10 +30,16 @@ class Patient():
 
         return builder
 
+    '''
+    Append med to this patients med list.
+    '''
     def add_med(self, med: Medication):
 
         self.meds.append(med)
 
+    '''
+    Convert patients med list to a simpler string list list containing only the med attributes shown in the table.
+    '''
     def meds_to_table(self):
 
         acc = []
@@ -37,6 +47,6 @@ class Patient():
         for med in self.meds:
 
             m = med[0]
-            acc.append([m.brand_name, m.generic_name,med[1], (m.rxcui[0] if (len(m.rxcui) > 0) else "<>")])
+            acc.append([m.brand_name, m.generic_name,med[1], (m.rxcui[0] if (len(m.rxcui) > 0) else "<>")]) # Configure this to add more attributes to table
 
         return acc

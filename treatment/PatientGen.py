@@ -4,7 +4,9 @@ import requests
 import random
 import json
 
-
+'''
+Without New Line. Returns string with the newline character [ \n ] removed from the end and all whitespace stripped.
+'''
 def wnl(string: str):
     loc = string.find('\n')
     if loc != -1:
@@ -12,6 +14,9 @@ def wnl(string: str):
     else:
         return string.strip()
 
+'''
+Return the openfda endpoint for a query with a limit of 10, of responses that have the openfda keyword, that correspond to [ condition ].
+'''
 def openfda_url(condition):
     return 'https://api.fda.gov/drug/label.json?api_key=VHCbYgFQH0qtUIAeXvkSyRYdZIg3T6G7QkrxEX1w&search=indications_and_usage:"' + condition + '"+AND+_exists_:"openfda"&limit=10'
 
@@ -133,13 +138,14 @@ class PatientPool():
 
 if __name__ == '__main__':
 
-   # Thinning script
+    # Thinning script: Run script after adding new diseases to the conditions.txt file.
+    # This scrip will remove all conditions which aren't recognized by the openfda query.
 
     pool = PatientPool()
     result = []
     total_removed = 0
 
-    for i in range(len(pool.disease_base)):
+    for i in range(len(pool.disease_base)): # Iterate over meds in disease base.
 
         resp = requests.get(openfda_url(pool.disease_base[i]))
 
