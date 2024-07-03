@@ -9,7 +9,7 @@ class Profile(ttk.Frame):
         self.configure(width=200, height= 500)
         self.add_labels()
         self.add_boxes()
-        self.grid_propagate(0)
+        #self.grid_propagate(0)
 
 
     def add_labels(self):

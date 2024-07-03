@@ -9,8 +9,8 @@ class ListTable(ttk.Frame):
 
         # Configure grid method for Frame
         self.configure(width= width, height= 500)
-        tk.Grid.rowconfigure(self, 0, weight=1)
-        tk.Grid.columnconfigure(self, 0, weight=1)
+#       tk.Grid.rowconfigure(self, 0, weight=1)
+#       tk.Grid.columnconfigure(self, 0, weight=1)
 
         # Assign default column ratio if proper col_sizes was not passed
         if len(col_sizes) == len(col_names):
@@ -61,8 +61,8 @@ class ListTable(ttk.Frame):
                              height=20)
 
         # Configure Grid object for this specific column
-        tk.Grid.columnconfigure(new_col, 0, weight=1)
-        tk.Grid.rowconfigure(new_col, 0, weight=1)
+        #tk.Grid.columnconfigure(new_col, 0, weight=1)
+        #tk.Grid.rowconfigure(new_col, 0, weight=1)
         new_col.grid(row=1, column=len(self.columns))
 
         # Add all necessary bindings for united scrolling

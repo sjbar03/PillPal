@@ -62,7 +62,7 @@ class PatientPool():
         file.close()
 
     '''
-    Populate this patient pool with first names for both men and women.
+    Populame this patient pool with first names for both men and women.
     '''
     def populate_fname_bases(self, mfilename, ffilename):
 

@@ -58,7 +58,6 @@ Constipation
 Corneal Ulcer
 Coronary Artery Disease
 Cough
-Craniopharyngioma
 Crohn's Disease
 Cushing's Disease
 Cystic Fibrosis
@@ -117,7 +116,6 @@ Hepatitis C
 Hip Pain
 Histiocytosis
 Hives (Urticaria)
-Hodgkin Lymphoma
 Hyperaldosteronism
 Hyperparathyroidism
 Hypertrophic Cardiomyopathy
@@ -173,7 +171,6 @@ Peripheral Artery Disease (PAD)
 Peripheral Neuropathy
 Pernicious Anemia
 Pheochromocytoma
-Pregnancy
 Primary Biliary Cirrhosis
 Protein-Losing Enteropathy (PLE)
 Psoriasis
@@ -222,3 +219,158 @@ Vertebral Fracture
 Vertigo
 Von Willebrand Disease
 Zollinger-Ellison Syndrome
+Acne
+ADHD
+Allergies
+Alzheimer's Disease
+Anemia
+Anxiety
+Rheumatoid Arthritis
+Osteoarthritis
+Asthma
+Atherosclerosis
+Atopic Dermatitis
+Eczema
+Back Pain
+Benign Prostatic Hyperplasia
+BPH
+Bipolar Disorder
+Bronchitis
+Canker Sores
+Cardiovascular Disease
+Cataracts
+Cellulitis
+Chronic Obstructive Pulmonary Disease
+COPD
+Cirrhosis
+Claudication
+Common Cold
+Constipation
+Coronary Artery Disease
+CAD
+Crohn's Disease
+Croup
+Cystic Fibrosis
+Dandruff
+Dementia
+Depression
+Diabetic Neuropathy
+Diarrhea
+Diverticulitis
+Dizziness
+Dyslipidemia
+Ear Infections
+Eczema
+Emphysema
+Endometriosis
+Epilepsy
+Erectile Dysfunction
+Fibromyalgia
+Flu
+Influenza
+Gastroesophageal Reflux Disease
+GERD
+Glaucoma
+Gout
+Headaches
+Hearing Loss
+Heart Failure
+Hemorrhoids
+Hepatitis B
+Hepatitis C
+Herpes Simplex Virus
+HSV
+High Blood Pressure
+Hypertension
+Hyperlipidemia
+HIV
+AIDS
+Hives
+Urticaria
+Hyperthyroidism
+Hypothyroidism
+Irritable Bowel Syndrome
+IBS
+Jaundice
+Kidney Stones
+Laryngitis
+Leukemia
+Liver Disease
+Lupus
+Lyme Disease
+Malaria
+Melanoma
+Menopause Symptoms
+Menstrual Cramps
+Migraine
+Multiple Myeloma
+Multiple Sclerosis
+MS
+Myasthenia Gravis
+Nausea
+Nephrotic Syndrome
+Obesity
+Obsessive-Compulsive Disorder
+OCD
+Osteoporosis
+Ovarian Cysts
+Pancreatitis
+Parkinson's Disease
+Pelvic Inflammatory Disease
+Peripheral Artery Disease
+PAD
+Peripheral Neuropathy
+Pharyngitis
+Pneumonia
+Polycystic Ovary Syndrome
+Post-Traumatic Stress Disorder
+PTSD
+Psoriasis
+Psoriatic Arthritis
+Pulmonary Embolism
+Restless Legs Syndrome
+Rheumatic Fever
+Rosacea
+Sarcoidosis
+Scabies
+Schizophrenia
+Sciatica
+Seasonal Affective Disorder
+SAD
+Sepsis
+Shingles
+Herpes Zoster
+Sinusitis
+Sjogren's Syndrome
+Skin Infections
+Sleep Apnea
+Sleep Disorders
+Sore Throat
+Stomach Ulcers
+Stroke
+Systemic Lupus Erythematosus
+SLE
+Tendonitis
+Tension Headaches
+Thyroid Disorders
+Tinnitus
+Tonsillitis
+Toothaches
+Tuberculosis
+TB
+Ulcerative Colitis
+Urinary Incontinence
+Urinary Tract Infections
+UTI
+Urticaria
+Hives
+Varicose Veins
+Vasculitis
+Vertigo
+Viral Infections
+Vitamin D Deficiency
+Warts
+Whooping Cough
+Pertussis
+Wilson's Disease
+Yeast Infections
