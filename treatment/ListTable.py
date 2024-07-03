@@ -9,8 +9,6 @@ class ListTable(ttk.Frame):
 
         # Configure grid method for Frame
         self.configure(width= width, height= 500)
-#       tk.Grid.rowconfigure(self, 0, weight=1)
-#       tk.Grid.columnconfigure(self, 0, weight=1)
 
         # Assign default column ratio if proper col_sizes was not passed
         if len(col_sizes) == len(col_names):
